@@ -105,8 +105,10 @@ function Main() {
             setTemp(data.current_weather.temperature)
             if (data.current_weather.is_day == 0) {
                 setDay("Notte")
+                document.body.classList.add("night")
             } else {
                 setDay("Giorno")
+                document.body.classList.remove("night")
             }
             let codice = data.current_weather.weathercode;
             setMet(weatherCodes[codice] || "Non disponibile");
