@@ -69,7 +69,7 @@ function Footer() {
     return (
         <>
             <footer>
-                FOOTER
+                developed by @Mattia De Vincentis
             </footer>
         </>
     )
