@@ -78,6 +78,7 @@ function App() {
     return (
         <>
             <div className="container">
+                <img src="../../img/logo.png" />
                 <Header />
                 <Main />
                 <Footer />
