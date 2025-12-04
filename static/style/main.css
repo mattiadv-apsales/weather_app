@@ -16,6 +16,7 @@
     --background: rgb(255, 255, 231);
     --color: rgb(0, 195, 255);
     --background-dark: rgb(29, 29, 29);
+    --bg-card: rgb(204, 204, 204);
 }
 
 body {
@@ -100,4 +101,12 @@ footer {
 
 .utiity {
     font-weight: 300 !important;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 26px;
+    text-align: center;
+    background: var(--bg-card);
+    box-shadow: 0px 4px 16px var(--background);
 }

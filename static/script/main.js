@@ -127,10 +127,12 @@ function Main() {
             <main>
                 <img src="../../img/sfondo.png" className="star" />
                 <img src="../../img/sfondo.png" className="star_bottom" />
-                <div><span className="utiity">Ti trovi a:</span> {cit}</div>
-                <div><span className="utiity">Una temperatura di:</span> {temp}°C</div>
-                <div><span className="utiity">Siamo di:</span> {day}</div>
-                <div><span className="utiity">Tempo fuori:</span> {met}{ico}</div>
+                <div className="card">
+                    <div><span className="utiity">Ti trovi a:</span> {cit}</div>
+                    <div><span className="utiity">Una temperatura di:</span> {temp}°C</div>
+                    <div><span className="utiity">Siamo di:</span> {day}</div>
+                    <div><span className="utiity">Tempo fuori:</span> {met}{ico}</div>
+                </div>
             </main>
         </>
     )
