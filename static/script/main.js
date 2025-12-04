@@ -13,10 +13,10 @@ function Main() {
     let [temp, setTemp] = React.useState("")
     let [cit, setCit] = React.useState("")
     let [day, setDay] = React.useState("")
+    let [met, setMet] = React.useState("")
 
     React.useEffect(() => {
         function geoLoc() {
-            console.log("Avviata")
             navigator.geolocation.getCurrentPosition((pos) => {
                 try {
                     let lat = pos.coords.latitude;
@@ -36,6 +36,37 @@ function Main() {
         let url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
         let url_citta = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=it`;
 
+        const weatherCodes = {
+            0: "Cielo sereno",
+            1: "Principalmente sereno",
+            2: "Parzialmente nuvoloso",
+            3: "Nuvoloso / Coperto",
+            45: "Nebbia",
+            48: "Nebbia con brina",
+            51: "Pioggerella leggera",
+            53: "Pioggerella moderata",
+            55: "Pioggerella intensa",
+            56: "Pioggia congelante leggera",
+            57: "Pioggia congelante intensa",
+            61: "Pioggia leggera",
+            63: "Pioggia moderata",
+            65: "Pioggia intensa",
+            66: "Pioggia congelante leggera",
+            67: "Pioggia congelante intensa",
+            71: "Neve leggera",
+            73: "Neve moderata",
+            75: "Neve intensa",
+            77: "Granelli di neve",
+            80: "Rovesci di pioggia leggeri",
+            81: "Rovesci di pioggia moderati",
+            82: "Rovesci di pioggia forti",
+            85: "Rovesci di neve leggeri",
+            86: "Rovesci di neve forti",
+            95: "Temporale",
+            96: "Temporale con grandine leggera",
+            99: "Temporale con grandine intensa"
+        };
+
         fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -45,6 +76,8 @@ function Main() {
             } else {
                 setDay("Giorno")
             }
+            let codice = data.current_weather.weathercode;
+            setMet(weatherCodes[codice] || "Non disponibile");
         })
 
         fetch(url_citta)
@@ -60,6 +93,7 @@ function Main() {
                 <div><span className="utiity">Ti trovi a:</span> {cit}</div>
                 <div><span className="utiity">Una temperatura di:</span> {temp}°C</div>
                 <div><span className="utiity">Siamo di:</span> {day}</div>
+                <div><span className="utiity">Tempo fuori:</span> {met}</div>
             </main>
         </>
     )
