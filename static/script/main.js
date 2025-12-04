@@ -57,9 +57,9 @@ function Main() {
     return (
         <>
             <main>
-                <div>Ti trovi a: {cit}</div>
-                <div>Una temperatura di: {temp}°C</div>
-                <div>Siamo di: {day}</div>
+                <div><span className="utiity">Ti trovi a:</span> {cit}</div>
+                <div><span className="utiity">Una temperatura di:</span> {temp}°C</div>
+                <div><span className="utiity">Siamo di:</span> {day}</div>
             </main>
         </>
     )

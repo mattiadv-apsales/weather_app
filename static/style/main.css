@@ -72,3 +72,7 @@ footer {
     align-items: center;
     font-size: 12px;
 }
+
+.utiity {
+    font-weight: 300 !important;
+}
