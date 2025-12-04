@@ -2,6 +2,7 @@ function Header() {
     return (
         <>
             <header>
+                <img src="../../img/logo.png" />
                 <div className="title">App meteo</div>
             </header>
         </>
@@ -78,7 +79,6 @@ function App() {
     return (
         <>
             <div className="container">
-                <img src="../../img/logo.png" />
                 <Header />
                 <Main />
                 <Footer />
